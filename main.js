@@ -18,6 +18,10 @@ class Telephone {
       }
       this.observers.forEach(observer => observer.onDial(number));
     }
+
+    displayNumber(number){
+      console.log(number);
+    }
   
     addObserver(observer) {
       this.observers.push(observer);
@@ -30,8 +34,9 @@ class Telephone {
 
   
   class Observer {
+
     onDial(number) {
-      console.log(`The number ${number} has been dialed`);
+      console.log(`Now dailing ${number}`);
     }
   }
 
@@ -44,4 +49,6 @@ phone.addPhoneNumber('234878786776');
 const observer = new Observer();
 phone.addObserver(observer);
 
-phone.dialPhoneNumber('234568765456');
+phone.displayNumber('234878786776');
+phone.dialPhoneNumber('234878786776');
+
